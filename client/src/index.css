@@ -1,0 +1,239 @@
+@layer default {
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: aliceblue;
+		font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+			"Lucida Sans", Arial, sans-serif;
+	}
+
+	#root {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding-inline: 20px;
+		box-sizing: border-box;
+	}
+
+	button {
+		padding: 5px 10px;
+		font-size: 10px;
+		text-transform: uppercase;
+		border-radius: 12px;
+		background-color: transparent;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+
+		&.edit {
+			border: 1.5px solid rgb(141, 181, 145);
+			color: rgb(141, 181, 145);
+
+			&:hover {
+				background-color: rgb(182, 223, 186);
+			}
+
+			&:active {
+				color: rgb(255, 255, 255);
+				background-color: rgb(141, 181, 145);
+			}
+		}
+
+		&.delete {
+			border: 1.5px solid rgb(255, 175, 163);
+			color: rgb(255, 175, 163);
+
+			&:hover {
+				background-color: rgb(255, 201, 193);
+			}
+
+			&:active {
+				color: rgb(255, 255, 255);
+				background-color: rgb(255, 175, 163);
+			}
+		}
+
+		&.create {
+			border: 1.5px solid rgb(108, 115, 148);
+			color: rgb(108, 115, 148);
+
+			&:hover {
+				background-color: rgb(131, 138, 172);
+			}
+
+			&:active {
+				color: rgb(255, 255, 255);
+				background-color: rgb(108, 115, 148);
+			}
+		}
+
+		&.signout {
+			border: 1.5px solid rgb(255, 175, 163);
+			background-color: rgb(255, 175, 163);
+			color: rgb(234, 234, 234);
+
+			&:hover {
+				background-color: rgb(175, 94, 94);
+				border-color: rgb(175, 94, 94);
+			}
+
+			&:active {
+				border-color: rbg(175, 81, 81);
+				color: rgb(255, 255, 255);
+				background-color: rgb(175, 81, 81);
+			}
+		}
+	}
+
+	input {
+		margin: 11px 0;
+		padding: 12px 6px;
+		border-radius: 12px;
+		border: 1.5px solid rgb(230, 232, 236);
+	}
+
+	label {
+		display: flex;
+		flex-flow: column nowrap;
+	}
+}
+
+.app {
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+	border-radius: 10px;
+	padding: 10px;
+	width: min(800px, 100%);
+	box-sizing: border-box;
+	margin-top: 50px;
+}
+
+.button-container,
+.info-container {
+	display: flex;
+	align-items: center;
+}
+
+.button-container {
+	& button {
+		margin: 0 5px;
+	}
+}
+
+.copyright {
+	font-size: 13px;
+	margin: 10px;
+	color: rgb(114, 114, 114);
+}
+
+.user-email {
+	font-size: 13px;
+	margin: 10px;
+	color: rgb(114, 114, 114);
+}
+
+/* List header */
+.list-header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* List item */
+.list-item {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin: 10px 0;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
+
+	.tick {
+		padding: 10px;
+	}
+}
+
+.task-title {
+	margin-right: 30px;
+}
+
+/* Modal */
+.overlay {
+	position: fixed;
+	z-index: 50;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal {
+	width: min(500px, 100%);
+	background-color: white;
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+
+	.form-title-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	& form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	& label {
+		font-size: 13px;
+	}
+}
+
+/* Auth */
+.auth-container {
+	display: flex;
+	justify-content: center;
+	margin: 5px;
+}
+
+.auth-container-box {
+	width: min(100%, 500px);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+
+	& form {
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		margin-bottom: 40px;
+	}
+}
+
+.auth-options {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	& button {
+		border: none;
+		padding: 10px;
+		color: rgb(35, 38, 47);
+		border-radius: 0;
+	}
+}
+
+/* Progress */
+
+.outer-bar {
+	width: 200px;
+	height: 14px;
+	background-color: rgb(216, 216, 216);
+	border-radius: 7px;
+	overflow: hidden;
+}
+
+.inner-bar {
+	height: 14px;
+}
