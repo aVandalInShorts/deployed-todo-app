@@ -9,8 +9,6 @@ const Auth = () => {
 	const [confirmPassword, setConfirmPassword] = useState(null);
 	const [error, setError] = useState(null);
 
-	console.log("cookies", cookies);
-
 	const viewLogin = (status) => {
 		setError(null);
 		setLogIn(status);
@@ -24,7 +22,6 @@ const Auth = () => {
 			return;
 		}
 
-		console.log("111", email, password);
 		const response = await fetch(
 			`${process.env.REACT_APP_SERVERURL}/${endpoint}`,
 			{
@@ -33,10 +30,8 @@ const Auth = () => {
 				body: JSON.stringify({ email, password }),
 			}
 		);
-		console.log("222");
 
 		const data = await response.json();
-		console.log("login/signup", data);
 
 		if (data.detail) {
 			setError(data.detail);

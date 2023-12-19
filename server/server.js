@@ -108,8 +108,6 @@ app.post("/login", async (req, res) => {
 			email,
 		]);
 
-		console.log("users.rows", users.rows);
-
 		if (!users.rows.length) {
 			return res.json({ detail: "User does not exist" });
 		}
@@ -131,5 +129,5 @@ app.post("/login", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-	return console.log(`server is listening on ${PORT}`);
+	return console.info(`server is listening on ${PORT}`);
 });

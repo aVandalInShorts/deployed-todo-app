@@ -24,7 +24,6 @@ const Modal = ({ mode, setShowModal, task, getData }) => {
 				}
 			);
 			if (response.status === 200) {
-				console.log("CREATE WORKED", response);
 				setShowModal(false);
 				getData();
 			}
@@ -45,7 +44,6 @@ const Modal = ({ mode, setShowModal, task, getData }) => {
 				}
 			);
 			if (response.status === 200) {
-				console.log("EDIT WORKED", response);
 				setShowModal(false);
 				getData();
 			}

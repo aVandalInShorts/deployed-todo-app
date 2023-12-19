@@ -15,7 +15,6 @@ const ListItem = ({ task, getData }) => {
 				}
 			);
 			if (response.status === 200) {
-				console.log("DELETE WORKED", response);
 				getData();
 			}
 		} catch (error) {
